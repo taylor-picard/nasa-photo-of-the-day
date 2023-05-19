@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 
 // const dummyData = {
 //     date: "2023-05-17",
@@ -7,14 +8,49 @@ import React from "react";
 //     title: "Sunspot with Light Bridge"
 //   }
 
+const StyledNasa = styled.div`
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+`
+const StyledH3 = styled.h3`
+    width: 100%;
+    padding-top: 1.5rem;
+    font-size: 2.5rem;
+    text-shadow: 0.3rem 0.3rem 0rem blue;
+`
+const StyledP1 = styled.p`
+    padding: 1.5rem;
+    font-size: 1.3rem;
+`
+const StyledP2 = styled.p`
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    ::first-letter{
+        float: left;
+        line-height: 1.3rem;
+        font-size: 3.5rem;
+        padding-top: .5rem;
+        padding-left: .5rem;
+        padding-bottom: .1rem;
+        margin-right: .23rem;
+        margin-left: .5rem;
+        color: blue;
+    }
+`
+const StyledImg = styled.img`
+    width: 100%; 
+`
+
 const NasaPhoto = (props) => {
     return (
-        <div className="nasa-photo-wrap">
-            <h3>{props.photo.title}</h3>
-            <p>{props.photo.date}</p>
-            <img src={props.photo.hdurl} alt=""/>
-            <p>{props.photo.explanation}</p>
-        </div>    
+        <StyledNasa className="nasa-photo-wrap">
+            <StyledH3>{props.photo.title}</StyledH3>
+            <StyledP1>{props.photo.date}</StyledP1>
+            <StyledImg src={props.photo.hdurl} alt=""/>
+            <StyledP2>{props.photo.explanation}</StyledP2>
+        </StyledNasa>    
     )
 }
 
